@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
 
 body { 
-    background-color: #F9F9F9; 
+    background-color: #FFF; 
     padding: 0px; 
     font: 16.0px/1.5 Crimson Pro, serif; 
     color: #333333; 
@@ -193,7 +193,7 @@ a {
 }
 
 a:hover { 
-    color: #E67E22; 
+    color: #2979ff; 
 }
 
 a small { 
@@ -444,8 +444,8 @@ footer {
 }
 
 .btn-l {
-    color: #E67E22;
-    border: 1px solid #E67E22;
+    color: #f7855c;
+    border: 1px solid #f7855c;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     padding-top: 0.1rem;
@@ -454,6 +454,6 @@ footer {
 }
 
 .btn-l:hover {
-    background-color: #E67E22;
+    background-color: #ff6b35;
     color: #FFFFFF;
 }

@@ -114,6 +114,7 @@ blockquote {
 
 .publications ol.bibliography li .title {
     font-weight: bolder;
+    color: #2C3E50;
 }
 
 .publications ol.bibliography li .author a {
