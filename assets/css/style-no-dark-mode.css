@@ -1,6 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,500;1,600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
 
+:root {
+    --primary-color: #861F41; /* Chicago Maroon */
+    --secondary-color: #E5751F; /* Burnt Orange */
+    --text-color: #222;
+    --light-text: #666;
+    --background-color: #fff;
+    --card-background: #f9f9f9;
+    --border-color: #861F41;
+    --hover-color: #E5751F;
+    --transition-speed: 0.3s;
+}
+
 body { 
     background-color: #FFF; 
     padding: 0px; 
@@ -162,15 +174,12 @@ papertitle { font-weight: 600; font-size: 100%; }
     width: 8.00em; 
 }
 
-h3, h4, h5, h6 { 
-    font-weight: 600; 
-    color: #2C3E50; 
-    margin: 0 0 20px; 
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-color);
 }
 
 h1 { 
     font-weight: 500; 
-    color: #2C3E50; 
     margin: 0 0 20px; 
 }
 
@@ -188,12 +197,13 @@ h1, h2, h3 { line-height: 1.1; }
 h1 { font-size: 28px; }
 
 a { 
-    color: #2980B9; 
+    color: var(--primary-color);
     text-decoration: none; 
+    transition: color var(--transition-speed);
 }
 
 a:hover { 
-    color: #2979ff; 
+    color: var(--secondary-color);
 }
 
 a small { 
@@ -203,7 +213,7 @@ a small {
     display: block; 
 }
 
-a:hover small { color: #2980B9; }
+a:hover small { color: var(--primary-color); }
 
 .wrapper { width: 960px; margin: 0 auto; }
 
@@ -299,7 +309,7 @@ header ul a:active {
 }
 
 strong { 
-    color: #222; 
+    color: var(--primary-color); 
     font-weight: 500; 
 }
 
@@ -325,7 +335,7 @@ small { font-size: 11px; }
 
 hr { 
     border: 0; 
-    background: #D1D1D1; 
+    background: var(--secondary-color); 
     height: 1px; 
     margin: 0 0 20px; 
 }
@@ -440,7 +450,7 @@ footer {
 
 .periodical {
     font-style: italic;
-    color: #42a547;
+    color: var(--secondary-color);
 }
 
 .btn-l {
@@ -455,5 +465,25 @@ footer {
 
 .btn-l:hover {
     background-color: #ff6b35;
+    color: #FFFFFF;
+}
+
+.btn-m {
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+    padding-left: 0.35rem;
+    padding-right: 0.35rem;
+    padding-top: 0.05rem;
+    padding-bottom: 0.05rem;
+    font-size: 15px;
+    display: inline-block;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all var(--transition-speed);
+    margin: 0.15rem 0.15rem 0.15rem 0;
+}
+
+.btn-m:hover {
+    background-color: var(--secondary-color);
     color: #FFFFFF;
 }
