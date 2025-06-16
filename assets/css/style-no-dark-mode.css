@@ -2,14 +2,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
 
 :root {
-    --primary-color: #861F41; /* Chicago Maroon */
-    --secondary-color: #E5751F; /* Burnt Orange */
+    --primary-color: #003366; /* Deep Navy Blue */
+    --secondary-color: #4A90E2; /* Bright Blue */
     --text-color: #222;
     --light-text: #666;
     --background-color: #fff;
     --card-background: #f9f9f9;
-    --border-color: #861F41;
-    --hover-color: #E5751F;
+    --border-color: #003366;
+    --hover-color: #4A90E2;
     --transition-speed: 0.3s;
 }
 

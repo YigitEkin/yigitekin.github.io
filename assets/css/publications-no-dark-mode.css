@@ -20,17 +20,17 @@
 
 :root {
     --global-bg-color: #F9F9F9;
-    --global-code-bg-color: rgba(230, 126, 34, 0.05);
+    --global-code-bg-color: rgba(0, 51, 102, 0.05);
     --global-text-color: #222;
     --global-text-color-light: #666;
-    --global-theme-color: #861F41;
-    --global-hover-color: #E5751F;
+    --global-theme-color: #003366;
+    --global-hover-color: #4A90E2;
     --global-footer-bg-color: #1C1C1C;
     --global-footer-text-color: #E8E8E8;
     --global-footer-link-color: #FFFFFF;
     --global-distill-app-color: #666666;
-    --primary-color: #861F41;
-    --secondary-color: #E5751F;
+    --primary-color: #003366;
+    --secondary-color: #4A90E2;
 }
 
 blockquote {
