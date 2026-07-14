@@ -4,33 +4,27 @@
 /* === ROOT VARIABLES === */
 :root {
     /* Refined academic color palette - HIGH CONTRAST */
-    --primary-color: #818cf8;
-    /* Brighter Indigo accent */
-    --primary-light: #a5b4fc;
-    /* Light indigo */
-    --secondary-color: #a78bfa;
-    /* Brighter Purple accent */
+    --primary-color: #38bdf8;
+    --primary-light: #7dd3fc;
+    --secondary-color: #2dd4bf;
     --accent-color: #22d3ee;
-    /* Brighter Cyan for highlights */
-    --link-color: #a5b4fc;
-    --link-hover-color: #c7d2fe;
-    --text-color: #f1f5f9;
-    /* Much brighter main text */
-    --text-muted: #cbd5e1;
-    /* Brighter muted text */
+    --link-color: #7dd3fc;
+    --link-hover-color: #bae6fd;
+    --text-color: #e5edf6;
+    --text-muted: #aebdce;
     --heading-color: #ffffff;
     /* Pure white headings */
-    --background-color: #0f172a;
-    --background-alt: #1e293b;
-    --card-background: rgba(30, 41, 59, 0.7);
-    --card-background-solid: #1e293b;
-    --border-color: rgba(148, 163, 184, 0.2);
-    --border-hover: rgba(167, 139, 250, 0.5);
+    --background-color: #09111f;
+    --background-alt: #111d30;
+    --card-background: rgba(17, 29, 48, 0.78);
+    --card-background-solid: #111d30;
+    --border-color: rgba(148, 180, 207, 0.18);
+    --border-hover: rgba(56, 189, 248, 0.48);
     --transition-speed: 0.25s;
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
-    --shadow-glow: 0 0 40px rgba(129, 140, 248, 0.1);
+    --shadow-glow: 0 0 40px rgba(56, 189, 248, 0.08);
 }
 
 /* === RESET & BASE === */
@@ -65,8 +59,8 @@ body::before {
     z-index: -1;
     pointer-events: none;
     background:
-        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.15), transparent 50%),
-        radial-gradient(ellipse 60% 40% at 80% 60%, rgba(139, 92, 246, 0.08), transparent 50%),
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(14, 165, 233, 0.12), transparent 52%),
+        radial-gradient(ellipse 60% 40% at 85% 65%, rgba(20, 184, 166, 0.05), transparent 52%),
         var(--background-color);
 }
 
@@ -158,7 +152,7 @@ section {
 
 .btn-m:hover {
     color: var(--heading-color);
-    background: rgba(99, 102, 241, 0.1);
+    background: rgba(14, 165, 233, 0.1);
     border-color: var(--primary-color);
     transform: translateY(-1px);
 }
@@ -187,8 +181,8 @@ section {
 .chip:hover {
     color: var(--heading-color);
     border-color: var(--primary-light);
-    background: rgba(99, 102, 241, 0.1);
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+    background: rgba(14, 165, 233, 0.1);
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.13);
     transform: translateY(-2px);
 }
 
@@ -336,7 +330,7 @@ button:focus-visible,
 
 /* === SELECTION === */
 ::selection {
-    background: rgba(99, 102, 241, 0.3);
+    background: rgba(14, 165, 233, 0.28);
     color: var(--heading-color);
 }
 

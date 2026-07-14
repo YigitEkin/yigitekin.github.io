@@ -13,7 +13,7 @@
   max-width: 720px;
   margin: 0 auto;
   padding: 2.5rem;
-  background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(30, 41, 59, 0.4) 100%);
+  background: linear-gradient(135deg, rgba(17, 29, 48, 0.94) 0%, rgba(12, 24, 41, 0.82) 100%);
   border: 1px solid rgba(148, 163, 184, 0.15);
   border-radius: 24px;
   backdrop-filter: blur(12px);
@@ -33,9 +33,9 @@
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
-  border: 3px solid rgba(129, 140, 248, 0.5);
+  border: 3px solid rgba(56, 189, 248, 0.48);
   box-shadow:
-    0 0 0 4px rgba(129, 140, 248, 0.12),
+    0 0 0 4px rgba(56, 189, 248, 0.1),
     0 8px 24px rgba(0, 0, 0, 0.3);
   background: var(--background-alt);
   transition: all 0.3s ease;
@@ -43,10 +43,10 @@
 }
 
 .hero-photo:hover {
-  border-color: rgba(167, 139, 250, 0.7);
+  border-color: rgba(45, 212, 191, 0.65);
   transform: scale(1.03);
   box-shadow:
-    0 0 0 6px rgba(167, 139, 250, 0.15),
+    0 0 0 6px rgba(45, 212, 191, 0.12),
     0 12px 32px rgba(0, 0, 0, 0.35);
 }
 
@@ -79,7 +79,7 @@
 }
 
 .hero-affiliation a {
-  color: #a5b4fc;
+  color: var(--primary-light);
   font-weight: 600;
   font-size: 1rem;
   text-decoration: none;
@@ -87,7 +87,7 @@
 }
 
 .hero-affiliation a:hover {
-  color: #c7d2fe;
+  color: var(--link-hover-color);
 }
 
 .hero-email {
@@ -102,7 +102,7 @@
 }
 
 .hero-email a:hover {
-  color: #a5b4fc;
+  color: var(--primary-light);
 }
 
 /* Social Links Row */
@@ -133,8 +133,8 @@
 
 .social-link:hover {
   color: #ffffff;
-  background: rgba(129, 140, 248, 0.15);
-  border-color: rgba(129, 140, 248, 0.4);
+  background: rgba(56, 189, 248, 0.12);
+  border-color: rgba(56, 189, 248, 0.38);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
@@ -156,16 +156,16 @@
 }
 
 .hero-bio a {
-  color: #a5b4fc;
+  color: var(--primary-light);
   font-weight: 500;
   text-decoration: none;
-  border-bottom: 1px solid rgba(165, 180, 252, 0.3);
+  border-bottom: 1px solid rgba(125, 211, 252, 0.28);
   transition: all 0.2s ease;
 }
 
 .hero-bio a:hover {
-  color: #c7d2fe;
-  border-bottom-color: rgba(199, 210, 254, 0.5);
+  color: var(--link-hover-color);
+  border-bottom-color: rgba(186, 230, 253, 0.5);
 }
 
 /* === HERO RESPONSIVE === */
@@ -299,7 +299,7 @@ section h2::after {
   border-color: var(--border-hover);
   box-shadow:
     0 12px 24px rgba(0, 0, 0, 0.2),
-    0 0 0 1px rgba(99, 102, 241, 0.1);
+    0 0 0 1px rgba(56, 189, 248, 0.09);
 }
 
 /* Image Column */
@@ -575,12 +575,8 @@ section h2::after {
 
 .service-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr;
   gap: 1rem;
-}
-
-.reviewer-card {
-  align-self: start;
 }
 
 .award {
@@ -597,6 +593,22 @@ section h2::after {
   display: flex;
   align-items: center;
   gap: 0.85rem;
+}
+
+.education-with-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-width: 0;
+}
+
+.education-entry {
+  min-width: 0;
+}
+
+.timeline-item .education-detail {
+  margin-top: 0.55rem;
+  margin-left: calc(52px + 0.85rem);
 }
 
 .reve-logo {
@@ -622,6 +634,32 @@ section h2::after {
   border-color: var(--primary-color);
 }
 
+.institution-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  padding: 0.25rem;
+  flex: 0 0 52px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 10px;
+  transition: border-color var(--transition-speed), transform var(--transition-speed);
+}
+
+.institution-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.institution-logo:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-1px);
+}
+
 footer {
   margin-bottom: 2rem;
 }
@@ -635,6 +673,10 @@ footer {
 
   .service-grid {
     grid-template-columns: 1fr;
+  }
+
+  .timeline-item .education-detail {
+    margin-left: 0;
   }
 }
 
