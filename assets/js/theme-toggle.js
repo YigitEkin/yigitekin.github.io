@@ -1,39 +1,49 @@
-/* Simple theme toggle: cycles between light and dark (default: light). */
-(function() {
+/* Restore the saved theme before styles render; default to light. */
+(function () {
   var storageKey = 'theme';
-  var classDark = 'theme-dark';
-  var classLight = 'theme-light';
+  var root = document.documentElement;
+  var theme = 'light';
+  var toggle;
 
-  function applyTheme(theme) {
-    var b = document.body;
-    b.classList.remove(classDark, classLight);
-    if (theme === 'dark') b.classList.add(classDark);
-    else b.classList.add(classLight);
+  try {
+    if (localStorage.getItem(storageKey) === 'dark') theme = 'dark';
+  } catch (error) {
+    // Theme switching also works when storage is unavailable.
   }
 
-  function currentTheme() {
-    return localStorage.getItem(storageKey) || 'light';
-  }
-
-  function setTheme(theme) {
-    localStorage.setItem(storageKey, theme);
-    applyTheme(theme);
-    var icon = document.querySelector('.theme-toggle i');
-    if (icon) {
-      icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+  function applyTheme(nextTheme) {
+    theme = nextTheme;
+    root.dataset.theme = theme;
+    document.querySelector('meta[name="theme-color"]').content =
+      theme === 'dark' ? '#0d1c32' : '#f7faff';
+    if (toggle) {
+      var dark = theme === 'dark';
+      toggle.title = dark ? 'Switch to light mode' : 'Switch to dark mode';
+      toggle.setAttribute('aria-label', toggle.title);
+      toggle.querySelector('i').className = dark ? 'fas fa-sun' : 'fas fa-moon';
+      toggle.querySelector('span').textContent = dark ? 'Light mode' : 'Dark mode';
     }
   }
 
-  // Initialize on DOMContentLoaded
-  document.addEventListener('DOMContentLoaded', function() {
-    // Default to light unless user previously chose dark
-    applyTheme(currentTheme());
-    var toggle = document.querySelector('.theme-toggle');
-    if (toggle) {
-      toggle.addEventListener('click', function() {
-        setTheme(currentTheme() === 'dark' ? 'light' : 'dark');
-      });
+  applyTheme(theme);
+  document.addEventListener('DOMContentLoaded', function () {
+    toggle = document.querySelector('.theme-toggle');
+    if (!toggle) return;
+    applyTheme(theme);
+    toggle.hidden = false;
+    toggle.addEventListener('click', function () {
+      applyTheme(theme === 'dark' ? 'light' : 'dark');
+      try {
+        localStorage.setItem(storageKey, theme);
+      } catch (error) {
+        // Keep the selected theme on this page without persistence.
+      }
+    });
+  });
+
+  window.addEventListener('storage', function (event) {
+    if (event.key === storageKey || event.key === null) {
+      applyTheme(event.newValue === 'dark' ? 'dark' : 'light');
     }
   });
 })();
-
