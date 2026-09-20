@@ -3,28 +3,45 @@
 
 /* === ROOT VARIABLES === */
 :root {
-    /* Refined academic color palette - HIGH CONTRAST */
-    --primary-color: #38bdf8;
-    --primary-light: #7dd3fc;
-    --secondary-color: #2dd4bf;
-    --accent-color: #22d3ee;
-    --link-color: #7dd3fc;
-    --link-hover-color: #bae6fd;
-    --text-color: #e5edf6;
-    --text-muted: #aebdce;
-    --heading-color: #ffffff;
-    /* Pure white headings */
-    --background-color: #09111f;
-    --background-alt: #111d30;
-    --card-background: rgba(17, 29, 48, 0.78);
-    --card-background-solid: #111d30;
-    --border-color: rgba(148, 180, 207, 0.18);
-    --border-hover: rgba(56, 189, 248, 0.48);
+    /* Based on daisyUI's Pastel theme, with near-white surfaces instead of #fff.
+       https://github.com/saadeghi/daisyui/blob/master/packages/daisyui/src/themes/pastel.css */
+    color-scheme: light;
+    --primary-color: #cbdff8;
+    --primary-light: #416b9c;
+    --secondary-color: oklch(89% 0.058 10.001);
+    --accent-color: oklch(90% 0.093 164.15);
+    --link-color: #416b9c;
+    --link-hover-color: #254f80;
+    --text-color: #253f60;
+    --text-muted: #526b89;
+    --heading-color: #193454;
+    --background-color: #f7faff;
+    --background-alt: #edf4fd;
+    --card-background: #fbfdff;
+    --card-background-solid: #fbfdff;
+    --border-color: #dce8f7;
+    --border-hover: #acc8ed;
+    --accent-rgb: 108, 157, 218;
+    --hero-background: linear-gradient(135deg, #fbfdff 0%, #f1f7ff 100%);
+    --button-background: #e5eefb;
+    --teaser-background: #f0f6fe;
+    --tag-green-background: #e0f5ea;
+    --tag-green-text: #32624e;
+    --tag-green-border: #bee7d2;
+    --tag-amber-background: #fbe9d9;
+    --tag-amber-text: #865432;
+    --tag-amber-border: #f0d3bb;
+    --tag-blue-background: #e5eefb;
+    --tag-blue-text: #46628c;
+    --tag-blue-border: #cbdcf4;
+    --tag-purple-background: #f4e3f5;
+    --tag-purple-text: #815285;
+    --tag-purple-border: #e8cceb;
     --transition-speed: 0.25s;
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
-    --shadow-glow: 0 0 40px rgba(56, 189, 248, 0.08);
+    --shadow-sm: 0 1px 2px rgba(35, 65, 105, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(35, 65, 105, 0.1), 0 2px 4px -1px rgba(35, 65, 105, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(35, 65, 105, 0.2), 0 4px 6px -2px rgba(35, 65, 105, 0.1);
+    --shadow-glow: 0 0 40px rgba(var(--accent-rgb), 0.08);
 }
 
 /* === RESET & BASE === */
@@ -59,8 +76,8 @@ body::before {
     z-index: -1;
     pointer-events: none;
     background:
-        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(14, 165, 233, 0.12), transparent 52%),
-        radial-gradient(ellipse 60% 40% at 85% 65%, rgba(20, 184, 166, 0.05), transparent 52%),
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(var(--accent-rgb), 0.05), transparent 52%),
+        radial-gradient(ellipse 60% 40% at 85% 65%, rgba(var(--accent-rgb), 0.025), transparent 52%),
         var(--background-color);
 }
 
@@ -152,7 +169,7 @@ section {
 
 .btn-m:hover {
     color: var(--heading-color);
-    background: rgba(14, 165, 233, 0.1);
+    background: rgba(var(--accent-rgb), 0.08);
     border-color: var(--primary-color);
     transform: translateY(-1px);
 }
@@ -181,8 +198,8 @@ section {
 .chip:hover {
     color: var(--heading-color);
     border-color: var(--primary-light);
-    background: rgba(14, 165, 233, 0.1);
-    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.13);
+    background: rgba(var(--accent-rgb), 0.08);
+    box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.12);
     transform: translateY(-2px);
 }
 
@@ -330,7 +347,7 @@ button:focus-visible,
 
 /* === SELECTION === */
 ::selection {
-    background: rgba(14, 165, 233, 0.28);
+    background: rgba(var(--accent-rgb), 0.2);
     color: var(--heading-color);
 }
 
